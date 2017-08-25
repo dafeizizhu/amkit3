@@ -1,0 +1,6 @@
+{
+  "presets": ["es2015-loose"],
+  "plugins": [
+    ["babel-plugin-webpack-alias", { "config": "./webpack.base.config.js" }]
+  ]
+}

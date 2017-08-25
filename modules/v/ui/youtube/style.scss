@@ -1,0 +1,322 @@
+@import '../reset.css';
+
+$fore-color: #f12b24;
+
+@keyframes dot-fade {
+  0% {
+    background-color: rgba(204,204,204,.5)
+  }
+  50% {
+    background-color: rgba(204,204,204,.15)
+  }
+  to {
+    background-color: rgba(204,204,204,.15)
+  }
+}
+
+.youtube-ui {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  font-family: Roboto,Arial,Helvetica,sans-serif;
+  color: #eee;
+  text-align: left;
+  direction: ltr;
+  font-size: 11px;
+  line-height: 1.3;
+  touch-action: manipulation;
+  contain: strict;
+
+  .spinner {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10%;
+    margin-left: -5%;
+    z-index: 18;
+    pointer-events: none;
+
+    .dots {
+      pointer-events: none;
+      position: absolute;
+      width: 19%;
+      padding-bottom: 19%;
+      top: 50%;
+      left: 50%;
+      margin-top: -9.5%;
+      margin-left: -9.5%;
+
+      .dot {
+        position: absolute;
+        width: 100%;
+        padding-bottom: 100%;
+        border-radius: 100%;
+        background-color: rgba(204,204,204,0);
+        animation: dot-fade .8s cubic-bezier(0.4,0.0,0.2,1) infinite;
+
+        &.dot-0 {
+          top: -143.5%;
+          left: 0;
+        }
+        &.dot-1 {
+          top: -101.5%;
+          left: 101.5%;
+          animation-delay: .1s;
+        }
+        &.dot-2 {
+          top: 0;
+          left: 143.5%;
+          animation-delay: .2s;
+        }
+        &.dot-3 {
+          top: 101.5%;
+          left: 101.5%;
+          animation-delay: .3s;
+        }
+        &.dot-4 {
+          top: 143.5%;
+          left: 0;
+          animation-delay: .4s;
+        }
+        &.dot-5 {
+          top: 101.5%;
+          left: -101.5%;
+          animation-delay: .5s;
+        }
+        &.dot-6 {
+          top: 0;
+          left: -143.5%;
+          animation-delay: .6s;
+        }
+        &.dot-7 {
+          top: -101.5%;
+          left: -101.5%;
+          animation-delay: .7s;
+        }
+      }
+    }
+  }
+
+  .gradient-bottom {
+    height: 98px;
+    width: 100%;
+    position: absolute;
+    background-repeat: repeat-x;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+    transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+    pointer-events: none;
+    bottom: 0;
+    background-position: bottom;
+    z-index: -1;
+  }
+
+  .bottom {
+    position: absolute;
+    text-shadow: 0 0 2px rgba(0,0,0,.5);
+    bottom: 0;
+    height: 36px;
+    width: 100%;
+    z-index: 61;
+    padding-top: 3px;
+    text-align: left;
+    direction: ltr;
+
+    .progress-bar-container {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: 35px;
+      height: 5px;
+
+      &.drag, &:hover {
+        .progress-bar {
+          .progress-list {
+            transform: none;
+          }
+          .scrubber-container {
+            .scrubber-button {
+              transform: none;
+            }
+          }
+          .scrubber-container {
+            .scrubber-button {
+              transform: none;
+            }
+          }
+        }
+      }
+
+      .progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 31;
+        outline: none;
+
+        .progress-list {
+          z-index: 39;
+          background: rgba(255,255,255,.2);
+          height: 100%;
+          transform: scaleY(0.6);
+          transition: transform .1s cubic-bezier(0.4,0.0,1,1);
+          position: relative;
+
+          .progress {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: 0 0;
+
+            &.play {
+              background-color: $fore-color;
+              transform: scaleX(0);
+            }
+          }
+        }
+
+        .scrubber-container {
+          position: absolute;
+          top: -4px;
+          left: -6.5px;
+          z-index: 43;
+
+          .scrubber-button {
+            height: 13px;
+            width: 13px;
+            border-radius: 6.5px;
+            transition: transform .1s cubic-bezier(0.4,0.0,1,1);
+            transform: scale(0);
+            background-color: $fore-color;
+
+            .scrubber-indicator {
+              position: absolute;
+              z-index: 42;
+              bottom: 16.9px;
+              left: 6.5px;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+
+    .controls {
+      height: 36px;
+      line-height: 36px;
+      font-size: 109%;
+      text-align: left;
+      direction: ltr;
+
+      .left {
+        float: left;
+        height: 100%;
+      }
+
+      .right {
+        float: right;
+        height: 100%;
+      }
+
+      .button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        color: inherit;
+        text-align: inherit;
+        font-size: 100%;
+        font-family: inherit;
+        cursor: default;
+        line-height: inherit;
+        opacity: .9;
+        display: inline-block;
+        transition: opacity .1s cubic-bezier(0.4,0.0,1,1);
+        overflow: hidden;
+        width: 36px;
+        height: 100%;
+        outline: 0;
+        cursor: pointer;
+
+        .ytp-svg-fill {
+          fill: #fff;
+        }
+
+        &.play-button {
+          width: 46px;
+        }
+      }
+
+      .volume-container {
+        font-size: 0;
+
+        &.hover, &.drag {
+          .volume-panel {
+            width: 52px;
+          }
+        }
+
+        .volume-panel {
+          display: inline-block;
+          width: 0;
+          height: 100%;
+          transition: margin .2s cubic-bezier(0.4,0.0,1,1),width .2s cubic-bezier(0.4,0.0,1,1);
+          cursor: pointer;
+          outline: 0;
+
+          .slider {
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+
+            .handle {
+              position: absolute;
+              top: 50%;
+              left: 40px;
+              width: 12px;
+              height: 12px;
+              border-radius: 6px;
+              margin-top: -6px;
+              background: #fff;
+
+              &:before, &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 50%;
+                height: 3px;
+                margin-top: -2px;
+                width: 64px;
+              }
+
+              &:before {
+                left: -58px;
+                background: #fff;
+              }
+
+              &:after {
+                left: 6px;
+                background: rgba(255,255,255,.2);
+              }
+            }
+          }
+        }
+      }
+
+      .time-display {
+        font-size: 109%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 5px;
+        white-space: nowrap;
+        line-height: 35px;
+      }
+    }
+  }
+}
