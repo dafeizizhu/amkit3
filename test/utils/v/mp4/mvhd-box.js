@@ -4,7 +4,7 @@ import { hex } from 'amkit3-modules/utils/dump'
 import MvhdBox from 'amkit3-modules/utils/v/mp4/mvhd-box'
 import DataStream from 'amkit3-modules/utils/data-stream'
 
-describe.only('utils/v/mp4/mvhd-box', () => {
+describe('utils/v/mp4/mvhd-box', () => {
   var type = 'mvhd'
   var version = 0
   var flags = new Uint8Array([0x00, 0x00, 0x00])

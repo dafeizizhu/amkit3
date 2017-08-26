@@ -182,7 +182,6 @@ var parse_moov = (data) => {
 }
 
 var parse_mvhd = (data) => {
-  console.log(hex(data, ','))
   var mvhd = parse_fullbox(data)
   var position = 12
 
@@ -224,6 +223,7 @@ var parse_trak = (data) => {
 }
 
 var parse_tkhd = (data) => {
+  console.log(hex(data, ','))
   var tkhd = parse_fullbox(data)
   var position = tkhd.position
 

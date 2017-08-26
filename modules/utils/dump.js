@@ -31,9 +31,9 @@ var t = (array, sep) => {
     if (i % 8 == 0) {
       var row = String(i)
       while (row.length < mll) row = ' ' + row
-      return row + '  ' + a + ' '
+      return row + '  ' + a + sep + ' '
     } else if (i % 8 == 7) {
-      return a + '\n'
+      return a + sep + '\n'
     } else {
       return a + sep + ' '
     }
