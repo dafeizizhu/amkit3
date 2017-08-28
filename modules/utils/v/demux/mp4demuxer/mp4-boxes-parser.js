@@ -446,7 +446,6 @@ var parse_dinf = (data) => {
 }
 
 var parse_dref = (data) => {
-  console.log(hex(data, ','))
   var dref = parse_fullbox(data)
   var position = dref.position
 
@@ -467,16 +466,17 @@ var parse_dref = (data) => {
   }
 
   dref.position = position
-  console.log(dref)
   return dref
 }
 
 var parse_url = (data) => {
+  console.log(hex(data, ','))
   var url = parse_fullbox(data)
 
   url.location = str(data, url.position, data.byteLength - url.position)
   url.position += data.byteLength - url.position
 
+  console.log(url)
   return url
 }
 

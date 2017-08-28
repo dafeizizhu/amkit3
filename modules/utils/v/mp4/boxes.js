@@ -8,6 +8,7 @@ import MdhdBox from './mdhd-box'
 import HdlrBox from './hdlr-box'
 import VmhdBox from './vmhd-box'
 import DrefBox from './dref-box'
+import UrlBox from './url-box'
 
 var boxes = {
   data: DataBox,
@@ -24,7 +25,8 @@ var boxes = {
   minf: ContainerBox,
   vmhd: VmhdBox,
   dinf: ContainerBox,
-  dref: DrefBox
+  dref: DrefBox,
+  'url ': UrlBox
 }
 
 export default boxes
