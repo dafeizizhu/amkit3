@@ -302,7 +302,6 @@ var parse_mdia = (data) => {
 }
 
 var parse_mdhd = (data) => {
-  console.log(hex(data, ','))
   var mdhd = parse_fullbox(data)
   var position = mdhd.position
 
@@ -325,11 +324,11 @@ var parse_mdhd = (data) => {
   position += 4
 
   mdhd.position = position
-  console.log(mdhd)
   return mdhd
 }
 
 var parse_hdlr = (data) => {
+  console.log(hex(data, ','))
   var hdlr = parse_fullbox(data)
   var position = hdlr.position
 
@@ -343,6 +342,7 @@ var parse_hdlr = (data) => {
   position += hdlr.name.length
 
   hdlr.position = position
+  console.log(hdlr)
   return hdlr
 }
 

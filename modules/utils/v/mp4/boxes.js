@@ -5,6 +5,7 @@ import MvhdBox from './mvhd-box'
 import TkhdBox from './tkhd-box'
 import ElstBox from './elst-box'
 import MdhdBox from './mdhd-box'
+import HdlrBox from './hdlr-box'
 
 var boxes = {
   data: DataBox,
@@ -16,7 +17,8 @@ var boxes = {
   edts: ContainerBox,
   elst: ElstBox,
   mdia: ContainerBox,
-  mdhd: MdhdBox
+  mdhd: MdhdBox,
+  hdlr: HdlrBox
 }
 
 export default boxes
