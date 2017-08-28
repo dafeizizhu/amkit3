@@ -353,7 +353,6 @@ var parse_stbl = (data) => {
 }
 
 var parse_stsd = (data) => {
-  console.log(hex(data, ','))
   var stsd = parse_fullbox(data)
   var position = stsd.position
 
@@ -374,12 +373,14 @@ var parse_stsd = (data) => {
   }
 
   stsd.position = position
-  console.log(stsd)
   return stsd
 }
 
 var parse_avc1 = (data) => {
-  return parse_visual_sample_entry(data)
+  console.log(hex(data, ','))
+  var avc1 = parse_visual_sample_entry(data)
+  console.log(avc1)
+  return avc1
 }
 
 var parse_avcC = (data) => {
