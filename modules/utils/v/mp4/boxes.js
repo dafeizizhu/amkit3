@@ -7,7 +7,7 @@ import ElstBox from './elst-box'
 import MdhdBox from './mdhd-box'
 import HdlrBox from './hdlr-box'
 import VmhdBox from './vmhd-box'
-import DrefBox from './dref-box'
+import EntriesBox from './entries-box'
 import UrlBox from './url-box'
 
 var boxes = {
@@ -25,8 +25,10 @@ var boxes = {
   minf: ContainerBox,
   vmhd: VmhdBox,
   dinf: ContainerBox,
-  dref: DrefBox,
-  'url ': UrlBox
+  dref: EntriesBox,
+  'url ': UrlBox,
+  stbl: ContainerBox,
+  stsd: EntriesBox
 }
 
 export default boxes

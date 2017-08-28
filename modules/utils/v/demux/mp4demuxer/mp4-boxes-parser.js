@@ -353,6 +353,7 @@ var parse_stbl = (data) => {
 }
 
 var parse_stsd = (data) => {
+  console.log(hex(data, ','))
   var stsd = parse_fullbox(data)
   var position = stsd.position
 
@@ -373,6 +374,7 @@ var parse_stsd = (data) => {
   }
 
   stsd.position = position
+  console.log(stsd)
   return stsd
 }
 
@@ -470,13 +472,11 @@ var parse_dref = (data) => {
 }
 
 var parse_url = (data) => {
-  console.log(hex(data, ','))
   var url = parse_fullbox(data)
 
   url.location = str(data, url.position, data.byteLength - url.position)
   url.position += data.byteLength - url.position
 
-  console.log(url)
   return url
 }
 
