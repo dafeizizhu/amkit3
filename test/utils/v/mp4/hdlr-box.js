@@ -3,7 +3,7 @@ import { assert } from 'chai'
 import HdlrBox from 'amkit3-modules/utils/v/mp4/hdlr-box'
 import DataStream from 'amkit3-modules/utils/data-stream'
 
-describe.only('utils/v/mp4/hdlr-box', () => {
+describe('utils/v/mp4/hdlr-box', () => {
   var type = 'hdlr'
   var version = 0
   var flags = new Uint8Array([0x00, 0x00, 0x00])

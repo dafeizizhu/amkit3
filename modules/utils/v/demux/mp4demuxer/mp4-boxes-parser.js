@@ -328,7 +328,6 @@ var parse_mdhd = (data) => {
 }
 
 var parse_hdlr = (data) => {
-  console.log(hex(data, ','))
   var hdlr = parse_fullbox(data)
   var position = hdlr.position
 
@@ -342,7 +341,6 @@ var parse_hdlr = (data) => {
   position += hdlr.name.length
 
   hdlr.position = position
-  console.log(hdlr)
   return hdlr
 }
 
@@ -428,6 +426,7 @@ var parse_avcC = (data) => {
 }
 
 var parse_vmhd = (data) => {
+  console.log(hex(data, ','))
   var vmhd = parse_fullbox(data)
   var position = vmhd.position
 
@@ -440,6 +439,7 @@ var parse_vmhd = (data) => {
   }
 
   vmhd.position = position
+  console.log(vmhd)
   return vmhd
 }
 
