@@ -426,7 +426,6 @@ var parse_avcC = (data) => {
 }
 
 var parse_vmhd = (data) => {
-  console.log(hex(data, ','))
   var vmhd = parse_fullbox(data)
   var position = vmhd.position
 
@@ -439,7 +438,6 @@ var parse_vmhd = (data) => {
   }
 
   vmhd.position = position
-  console.log(vmhd)
   return vmhd
 }
 
@@ -448,6 +446,7 @@ var parse_dinf = (data) => {
 }
 
 var parse_dref = (data) => {
+  console.log(hex(data, ','))
   var dref = parse_fullbox(data)
   var position = dref.position
 
@@ -468,6 +467,7 @@ var parse_dref = (data) => {
   }
 
   dref.position = position
+  console.log(dref)
   return dref
 }
 

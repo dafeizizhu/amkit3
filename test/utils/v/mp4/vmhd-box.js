@@ -3,7 +3,7 @@ import { assert } from 'chai'
 import VmhdBox from 'amkit3-modules/utils/v/mp4/vmhd-box'
 import DataStream from 'amkit3-modules/utils/data-stream'
 
-describe.only('utils/v/mp4/vmhd-box', () => {
+describe('utils/v/mp4/vmhd-box', () => {
   var type = 'vmhd'
   var version = 0
   var flags = new Uint8Array([0x00, 0x00, 0x01])

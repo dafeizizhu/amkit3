@@ -7,6 +7,7 @@ import ElstBox from './elst-box'
 import MdhdBox from './mdhd-box'
 import HdlrBox from './hdlr-box'
 import VmhdBox from './vmhd-box'
+import DrefBox from './dref-box'
 
 var boxes = {
   data: DataBox,
@@ -21,7 +22,9 @@ var boxes = {
   mdhd: MdhdBox,
   hdlr: HdlrBox,
   minf: ContainerBox,
-  vmhd: VmhdBox
+  vmhd: VmhdBox,
+  dinf: ContainerBox,
+  dref: DrefBox
 }
 
 export default boxes
