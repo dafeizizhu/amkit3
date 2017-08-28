@@ -223,7 +223,6 @@ var parse_trak = (data) => {
 }
 
 var parse_tkhd = (data) => {
-  console.log(hex(data, ','))
   var tkhd = parse_fullbox(data)
   var position = tkhd.position
 
@@ -267,6 +266,7 @@ var parse_edts = (data) => {
 }
 
 var parse_elst = (data) => {
+  console.log(hex(data, ','))
   var elst = parse_fullbox(data)
   var position = elst.position
 
@@ -295,6 +295,7 @@ var parse_elst = (data) => {
   }
 
   elst.position = position
+  console.log(elst)
   return elst
 }
 
