@@ -3,7 +3,7 @@ import { assert } from 'chai'
 import ElstBox from 'amkit3-modules/utils/v/mp4/elst-box'
 import DataStream from 'amkit3-modules/utils/data-stream'
 
-describe.only('utils/v/mp4/elst-box', () => {
+describe('utils/v/mp4/elst-box', () => {
   var type = 'elst'
   var version = 0
   var flags = new Uint8Array([0x00, 0x00, 0x00])

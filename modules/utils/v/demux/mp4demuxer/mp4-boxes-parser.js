@@ -266,7 +266,6 @@ var parse_edts = (data) => {
 }
 
 var parse_elst = (data) => {
-  console.log(hex(data, ','))
   var elst = parse_fullbox(data)
   var position = elst.position
 
@@ -295,7 +294,6 @@ var parse_elst = (data) => {
   }
 
   elst.position = position
-  console.log(elst)
   return elst
 }
 
@@ -304,6 +302,7 @@ var parse_mdia = (data) => {
 }
 
 var parse_mdhd = (data) => {
+  console.log(hex(data, ','))
   var mdhd = parse_fullbox(data)
   var position = mdhd.position
 
@@ -326,6 +325,7 @@ var parse_mdhd = (data) => {
   position += 4
 
   mdhd.position = position
+  console.log(mdhd)
   return mdhd
 }
 

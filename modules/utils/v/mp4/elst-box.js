@@ -46,7 +46,7 @@ ElstBox.fromStream = stream => {
 }
 
 ElstBox.dataFromStream = (type, size, stream) => {
-  var lastPosition = stream.getPosition()
+  var lastPosition = stream.getPosition() + size - 8
   var fullBox = FullBox.dataFromStream(type, size, stream)
   var { version, flags } = fullBox
   var entry_count = stream.readUint32()
@@ -58,6 +58,9 @@ ElstBox.dataFromStream = (type, size, stream) => {
     var media_rate_fraction = stream.readInt16()
     entries.push({ segment_duration, media_time, media_rate_integer, media_rate_fraction })
   }
+  
+  assert(lastPosition == stream.getPosition())
+
   return new ElstBox({ type, version, flags, entries })
 }
 
