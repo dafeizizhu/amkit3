@@ -480,7 +480,6 @@ var parse_url = (data) => {
 }
 
 var parse_stts = (data) => {
-  console.log(hex(data, ','))
   var stts = parse_fullbox(data)
   var position = stts.position
   stts.entry_count = uint32(data, position)
@@ -495,11 +494,11 @@ var parse_stts = (data) => {
     stts.entries.push(entry)
   }
   stts.position = position
-  console.log(stts)
   return stts
 }
 
 var parse_stss = (data) => {
+  console.log(hex(data, ','))
   var stss = parse_fullbox(data)
   var position = stss.position
   stss.entry_count = uint32(data, position)
@@ -512,6 +511,7 @@ var parse_stss = (data) => {
     stss.entries.push(entry)
   }
   stss.position = position
+  console.log(stss)
   return stss
 }
 

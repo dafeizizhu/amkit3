@@ -19,8 +19,10 @@ class Box {
     throw new Error('not implemented')
   }
   write(stream) {
+    var lastPosition = stream.getPosition() + this.getSize()
     this.writeHead(stream)
     this.writeData(stream)
+    assert(stream.getPosition() == lastPosition)
   }
 }
 
