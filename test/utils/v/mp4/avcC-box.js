@@ -3,7 +3,7 @@ import { assert } from 'chai'
 import AvcCBox from 'amkit3-modules/utils/v/mp4/avcC-box'
 import DataStream from 'amkit3-modules/utils/data-stream'
 
-describe.only('utils/v/mp4/avcC-box', () => {
+describe('utils/v/mp4/avcC-box', () => {
   var type = 'avcC'
   var configurationVersion = 1
   var AVCProfileIndication = 100

@@ -11,6 +11,7 @@ import EntriesBox from './entries-box'
 import UrlBox from './url-box'
 import VisualSampleEntryBox from './visual-sample-entry-box'
 import AvcCBox from './avcC-box'
+import SttsBox from './stts-box'
 
 var boxes = {
   data: DataBox,
@@ -32,7 +33,8 @@ var boxes = {
   stbl: ContainerBox,
   stsd: EntriesBox,
   avc1: VisualSampleEntryBox,
-  avcC: AvcCBox
+  avcC: AvcCBox,
+  stts: SttsBox
 }
 
 export default boxes

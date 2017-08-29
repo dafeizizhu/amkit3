@@ -382,7 +382,6 @@ var parse_avc1 = (data) => {
 }
 
 var parse_avcC = (data) => {
-  console.log(hex(data, ','))
   var avcC = parse_box(data)
   var position = avcC.position
 
@@ -424,7 +423,6 @@ var parse_avcC = (data) => {
   // TODO avcC.AVCProfileIndication == 100 || 110 || 122 || 144 ...
 
   avcC.position = position
-  console.log(avcC)
   return avcC
 }
 
@@ -482,6 +480,7 @@ var parse_url = (data) => {
 }
 
 var parse_stts = (data) => {
+  console.log(hex(data, ','))
   var stts = parse_fullbox(data)
   var position = stts.position
   stts.entry_count = uint32(data, position)
@@ -496,6 +495,7 @@ var parse_stts = (data) => {
     stts.entries.push(entry)
   }
   stts.position = position
+  console.log(stts)
   return stts
 }
 
