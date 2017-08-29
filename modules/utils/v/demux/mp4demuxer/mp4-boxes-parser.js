@@ -377,13 +377,12 @@ var parse_stsd = (data) => {
 }
 
 var parse_avc1 = (data) => {
-  console.log(hex(data, ','))
   var avc1 = parse_visual_sample_entry(data)
-  console.log(avc1)
   return avc1
 }
 
 var parse_avcC = (data) => {
+  console.log(hex(data, ','))
   var avcC = parse_box(data)
   var position = avcC.position
 
@@ -425,6 +424,7 @@ var parse_avcC = (data) => {
   // TODO avcC.AVCProfileIndication == 100 || 110 || 122 || 144 ...
 
   avcC.position = position
+  console.log(avcC)
   return avcC
 }
 

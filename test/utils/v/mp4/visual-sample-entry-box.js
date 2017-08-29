@@ -4,7 +4,7 @@ import VisualSampleEntryBox from 'amkit3-modules/utils/v/mp4/visual-sample-entry
 import DataBox from 'amkit3-modules/utils/v/mp4/data-box'
 import DataStream from 'amkit3-modules/utils/data-stream'
 
-describe.only('utils/v/mp4/visual-sample-entry-box', () => {
+describe('utils/v/mp4/visual-sample-entry-box', () => {
   var type = 'avc1'
   var data_reference_index = 1
   var width = 1280

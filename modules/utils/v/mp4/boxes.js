@@ -9,6 +9,8 @@ import HdlrBox from './hdlr-box'
 import VmhdBox from './vmhd-box'
 import EntriesBox from './entries-box'
 import UrlBox from './url-box'
+import VisualSampleEntryBox from './visual-sample-entry-box'
+import AvcCBox from './avcC-box'
 
 var boxes = {
   data: DataBox,
@@ -28,7 +30,9 @@ var boxes = {
   dref: EntriesBox,
   'url ': UrlBox,
   stbl: ContainerBox,
-  stsd: EntriesBox
+  stsd: EntriesBox,
+  avc1: VisualSampleEntryBox,
+  avcC: AvcCBox
 }
 
 export default boxes
