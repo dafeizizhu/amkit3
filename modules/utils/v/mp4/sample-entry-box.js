@@ -31,8 +31,6 @@ SampleEntryBox.dataFromStream = (type, size, stream) => {
   stream.skip(6)
   var data_reference_index = stream.readUint16()
 
-  assert(lastPosition == stream.getPosition())
-
   return new SampleEntryBox({ type, data_reference_index })
 }
 
