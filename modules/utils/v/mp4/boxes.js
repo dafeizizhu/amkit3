@@ -13,6 +13,7 @@ import VisualSampleEntryBox from './visual-sample-entry-box'
 import AvcCBox from './avcC-box'
 import SttsBox from './stts-box'
 import StssBox from './stss-box'
+import CttsBox from './ctts-box'
 
 var boxes = {
   data: DataBox,
@@ -36,7 +37,8 @@ var boxes = {
   avc1: VisualSampleEntryBox,
   avcC: AvcCBox,
   stts: SttsBox,
-  stss: StssBox
+  stss: StssBox,
+  ctts: CttsBox
 }
 
 export default boxes
