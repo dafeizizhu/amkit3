@@ -514,7 +514,6 @@ var parse_stss = (data) => {
 }
 
 var parse_ctts = (data) => {
-  console.log(hex(data, ','))
   var ctts = parse_fullbox(data)
   var position = ctts.position
   ctts.entry_count = uint32(data, position)
@@ -533,11 +532,11 @@ var parse_ctts = (data) => {
     throw new Error('version equal to 1 is not implemented')
   }
   ctts.position = position
-  console.log(ctts)
   return ctts
 }
 
 var parse_stsc = (data) => {
+  console.log(hex(data, ','))
   var stsc = parse_fullbox(data)
   var position = stsc.position
   stsc.entry_count = uint32(data, position)
@@ -554,6 +553,7 @@ var parse_stsc = (data) => {
     stsc.entries.push(entry)
   }
   stsc.position = position
+  console.log(stsc)
   return stsc
 }
 
