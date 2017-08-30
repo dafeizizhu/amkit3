@@ -1,10 +1,9 @@
 import { assert } from 'chai'
-import { hex } from 'amkit3-modules/utils/dump'
 
 import StszBox from 'amkit3-modules/utils/v/mp4/stsz-box'
 import DataStream from 'amkit3-modules/utils/data-stream'
 
-describe.only('utils/v/mp4/stsz-box', () => {
+describe('utils/v/mp4/stsz-box', () => {
   var type = 'stsz'
   var version = 0
   var flags = new Uint8Array([0x00, 0x00, 0x00])

@@ -556,7 +556,6 @@ var parse_stsc = (data) => {
 }
 
 var parse_stsz = (data) => {
-  console.log(hex(data, ','))
   var stsz = parse_fullbox(data)
   var position = stsz.position
   stsz.sample_size = uint32(data, position)
@@ -573,11 +572,11 @@ var parse_stsz = (data) => {
     }
   }
   stsz.position = position
-  console.log(stsz)
   return stsz
 }
 
 var parse_stco = (data) => {
+  console.log(hex(data, ','))
   var stco = parse_fullbox(data)
   var position = stco.position
   stco.entry_count = uint32(data, position)
@@ -590,6 +589,7 @@ var parse_stco = (data) => {
     stco.entries.push(entry)
   }
   stco.position = position
+  console.log(stco)
   return stco
 }
 

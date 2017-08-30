@@ -16,6 +16,7 @@ import StssBox from './stss-box'
 import CttsBox from './ctts-box'
 import StscBox from './stsc-box'
 import StszBox from './stsz-box'
+import StcoBox from './stco-box'
 
 var boxes = {
   data: DataBox,
@@ -42,7 +43,8 @@ var boxes = {
   stss: StssBox,
   ctts: CttsBox,
   stsc: StscBox,
-  stsz: StszBox
+  stsz: StszBox,
+  stco: StcoBox
 }
 
 export default boxes
