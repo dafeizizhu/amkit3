@@ -592,7 +592,6 @@ var parse_stco = (data) => {
 }
 
 var parse_smhd = (data) => {
-  console.log(hex(data, ','))
   var smhd = parse_fullbox(data)
   var position = smhd.position
   smhd.balance = parseFloat(uint8(data, position) + '.' + uint8(data, position + 1))
@@ -601,12 +600,14 @@ var parse_smhd = (data) => {
   position += 2
 
   smhd.position = position
-  console.log(smhd)
   return smhd
 }
 
 var parse_mp4a = (data) => {
-  return parse_audio_sample_entry(data)
+  console.log(hex(data, ','))
+  var mp4a = parse_audio_sample_entry(data)
+  console.log(mp4a)
+  return mp4a
 }
 
 const ES_DescriptorTag = 0x03
