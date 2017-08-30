@@ -18,6 +18,8 @@ import StscBox from './stsc-box'
 import StszBox from './stsz-box'
 import StcoBox from './stco-box'
 import SmhdBox from './smhd-box'
+import AudioSampleEntryBox from './audio-sample-entry-box'
+import EsdsBox from './esds-box'
 
 var boxes = {
   data: DataBox,
@@ -46,7 +48,9 @@ var boxes = {
   stsc: StscBox,
   stsz: StszBox,
   stco: StcoBox,
-  smhd: SmhdBox
+  smhd: SmhdBox,
+  mp4a: AudioSampleEntryBox,
+  esds: EsdsBox
 }
 
 export default boxes

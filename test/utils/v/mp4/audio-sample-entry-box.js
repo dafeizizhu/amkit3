@@ -4,7 +4,7 @@ import AudioSampleEntryBox from 'amkit3-modules/utils/v/mp4/audio-sample-entry-b
 import DataBox from 'amkit3-modules/utils/v/mp4/data-box'
 import DataStream from 'amkit3-modules/utils/data-stream'
 
-describe.only('utils/v/mp4/audio-sample-entry-box', () => {
+describe('utils/v/mp4/audio-sample-entry-box', () => {
   var type = 'mp4a'
   var data_reference_index = 1
   var channelcount = 2

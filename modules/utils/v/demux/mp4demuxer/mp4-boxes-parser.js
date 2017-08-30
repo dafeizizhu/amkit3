@@ -604,9 +604,7 @@ var parse_smhd = (data) => {
 }
 
 var parse_mp4a = (data) => {
-  console.log(hex(data, ','))
   var mp4a = parse_audio_sample_entry(data)
-  console.log(mp4a)
   return mp4a
 }
 
@@ -692,12 +690,14 @@ var parse_esds_descriptors = data => {
 }
 
 var parse_esds = data => {
+  console.log(hex(data, ','))
   var esds = parse_fullbox(data)
   var position = esds.position
 
   esds.descriptors = parse_esds_descriptors(data.subarray(position, data.byteLength))
   esds.position = data.byteLength
 
+  console.log(esds)
   return esds
 }
 
