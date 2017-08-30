@@ -4,7 +4,7 @@ import Box from './box'
 import Boxes from './boxes'
 import FullBox from './full-box'
 
-class DrefBox extends FullBox {
+class EntriesBox extends FullBox {
   constructor(o) {
     super(o)
 
@@ -25,12 +25,12 @@ class DrefBox extends FullBox {
   }
 }
 
-DrefBox.fromStream = stream => {
+EntriesBox.fromStream = stream => {
   var box = Box.fromStream(stream)
-  return DrefBox.dataFromStream(box.type, box.size, stream)
+  return EntriesBox.dataFromStream(box.type, box.size, stream)
 }
 
-DrefBox.dataFromStream = (type, size, stream) => {
+EntriesBox.dataFromStream = (type, size, stream) => {
   var lastPosition = stream.getPosition() + size - 8
   var fullBox = FullBox.dataFromStream(type, size, stream)
   var { version, flags } = fullBox
@@ -48,7 +48,7 @@ DrefBox.dataFromStream = (type, size, stream) => {
 
   assert(lastPosition == stream.getPosition())
 
-  return new DrefBox({ type, version, flags, entries })
+  return new EntriesBox({ type, version, flags, entries })
 }
 
-export default DrefBox
+export default EntriesBox 

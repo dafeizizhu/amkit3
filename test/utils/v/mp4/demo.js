@@ -10,7 +10,8 @@ describe('utils/v/mp4/demo', () => {
     var start = 0,
         end = 1024 - 1,
         ready = false,
-        url = 'http://huya-w6.huya.com/1733/15833540/1300/cd23604ac09647c8272f09f8e4276454.mp4',
+        //url = 'http://huya-w6.huya.com/1733/15833540/1300/cd23604ac09647c8272f09f8e4276454.mp4',
+        url = 'http://huya-w6.huya.com/1734/17240000/1300/50c8c54f03537baec2d745c6b0f513d5.mp4',
         dataStream = new DataStream(),
         type, size, boxes = [], readPos = 0
 
