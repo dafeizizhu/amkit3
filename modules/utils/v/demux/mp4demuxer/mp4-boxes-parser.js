@@ -576,7 +576,6 @@ var parse_stsz = (data) => {
 }
 
 var parse_stco = (data) => {
-  console.log(hex(data, ','))
   var stco = parse_fullbox(data)
   var position = stco.position
   stco.entry_count = uint32(data, position)
@@ -589,11 +588,11 @@ var parse_stco = (data) => {
     stco.entries.push(entry)
   }
   stco.position = position
-  console.log(stco)
   return stco
 }
 
 var parse_smhd = (data) => {
+  console.log(hex(data, ','))
   var smhd = parse_fullbox(data)
   var position = smhd.position
   smhd.balance = parseFloat(uint8(data, position) + '.' + uint8(data, position + 1))
@@ -602,6 +601,7 @@ var parse_smhd = (data) => {
   position += 2
 
   smhd.position = position
+  console.log(smhd)
   return smhd
 }
 
